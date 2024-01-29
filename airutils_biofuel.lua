@@ -4,6 +4,7 @@
 local S = airutils.S
 local module_name = "airutils"
 
+--[[
 if minetest.get_modpath("technic") then
     if technic then
 	    technic.register_extractor_recipe({input = {"farming:wheat 33"}, output = "biofuel:biofuel 1"})
@@ -33,6 +34,7 @@ if minetest.get_modpath("default") then
 		},
 	})
 end
+
 if minetest.get_modpath("mcl_core") then
 	minetest.register_craft({
 		output = module_name .. ":biofuel_distiller",
@@ -43,7 +45,7 @@ if minetest.get_modpath("mcl_core") then
 		},
 	})
 end
-
+]]
 
 -- biofuel
 local new_gallon_id = "airutils:biofuel"
@@ -59,7 +61,7 @@ minetest.register_craft({
 })
 
 minetest.register_alias("biofuel:biofuel", new_gallon_id) --for the old biofuel
-
+--[[
 local ferment = {
 	{"default:papyrus", new_gallon_id},
 	{"farming:wheat", new_gallon_id},
@@ -272,5 +274,5 @@ minetest.register_abm({
         minetest.swap_node(pos,{name = module_name..":biofuel_distiller"})
     end,
 })
-
+]]
 
